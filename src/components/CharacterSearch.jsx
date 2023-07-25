@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import getMarvelCharacters from '../marvelAPI';
+import React, { useState } from 'react'
+import getMarvelCharacters from '../marvelAPI'
 
 const CharacterSearch = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [characters, setCharacters] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('')
+  const [characters, setCharacters] = useState([])
 
   const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
+    setSearchQuery(event.target.value)
   };
 
   const handleSearchSubmit = async (event) => {
-    event.preventDefault();
-    const foundCharacters = await getMarvelCharacters(searchQuery);
-    setCharacters(foundCharacters);
+    event.preventDefault()
+    const foundCharacters = await getMarvelCharacters(searchQuery)
+    setCharacters(foundCharacters)
   };
 
   return (
@@ -36,4 +36,4 @@ const CharacterSearch = () => {
   );
 };
 
-export default CharacterSearch;
+export default CharacterSearch
